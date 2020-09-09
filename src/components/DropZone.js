@@ -4,11 +4,10 @@ import {useDropzone} from 'react-dropzone'
 function DropZone({handleFile}) {
   const onDrop = useCallback(acceptedFiles => {
     // Do something with the files
-    console.log(acceptedFiles);
+    // console.log(acceptedFiles);
     const reader = new FileReader();
 
     reader.onload = (e) => {
-      console.log(e.target.result)
       handleFile(e.target.result);
     };
 
@@ -23,7 +22,7 @@ function DropZone({handleFile}) {
       {
         isDragActive ?
           <p>Drop the files here ...</p> :
-          <p>Drag 'n' drop some files here, or click to select files</p>
+          <p>&#x2795;</p>
       }
     </div>
   )

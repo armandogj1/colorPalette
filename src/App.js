@@ -17,6 +17,7 @@ class App extends React.Component {
   }
 
   handleDrop(image) {
+
     const newState = {...this.state};
     newState.droppedFile = image;
     this.setState(newState);
@@ -32,7 +33,7 @@ class App extends React.Component {
     return (
       <>
         <h1>
-          Hello {name}, Welcome to the image percolator!
+          Welcome to the image percolator!
         </h1>
         <DropZone handleFile={this.handleDrop}/>
         {
