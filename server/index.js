@@ -11,6 +11,9 @@ app.use(bodyParser.json());
 // Due to express, when you load the page, it doesn't make a get request to '/', it simply serves up the dist folder
 app.use(express.static(path.join(__dirname, '../dist')));
 
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../dist/index.html'));
+});
 
 app.listen(PORT, function () {
   console.log(`listening on port ${PORT}!`);
