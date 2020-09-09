@@ -3,7 +3,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
 var app = express();
-const PORT = 3000;
+const port = 3000;
 
 //Middleware
 app.use(bodyParser.json());
@@ -16,5 +16,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(PORT, function () {
-  console.log(`listening on port ${PORT}!`);
+  console.log(`listening on port ${port}!`);
 });
