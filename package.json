@@ -10,7 +10,8 @@
     "build-prod": "webpack -p --mode production",
     "react-dev": "webpack -d --watch",
     "start-dev": "nodemon server/index.js",
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "heroku-postbuild": "webpack -d"
   },
   "repository": {
     "type": "git",
