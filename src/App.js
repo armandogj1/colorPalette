@@ -24,8 +24,8 @@ class App extends React.Component {
   }
 
   handleColors(colors) {
-    const newColors = { colors: [...this.state.colors, ...colors] };
-    this.setState(state => (newColors));
+    const newColors = [...this.state.colors, ...colors];
+    this.setState(state => ({colors: newColors}));
   }
 
   render() {
@@ -35,7 +35,19 @@ class App extends React.Component {
         <h1>
           Welcome to the image percolator!
         </h1>
-        <DropZone handleFile={this.handleDrop}/>
+
+        <DropZone
+          id='dropZone'
+          handleFile={this.handleDrop}
+        />
+
+        {
+          !this.state.colors.length ? null :
+          <Canvas
+            id='canvas'
+            colors={this.state.colors}
+          />
+        }
         {
           !this.state.droppedFile ? null :
           <Colors
@@ -43,11 +55,6 @@ class App extends React.Component {
             colors={this.state.colors}
             handleColors={this.handleColors}
           />
-        }
-
-        {
-          !this.state.colors.length ? null :
-          <Canvas colors={this.state.colors} style={{display: 'flex'}}/>
         }
       </>
     );

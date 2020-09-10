@@ -3,8 +3,6 @@ import {useDropzone} from 'react-dropzone'
 
 function DropZone({handleFile}) {
   const onDrop = useCallback(acceptedFiles => {
-    // Do something with the files
-    // console.log(acceptedFiles);
     const reader = new FileReader();
 
     reader.onload = (e) => {
