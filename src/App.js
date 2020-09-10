@@ -37,7 +37,6 @@ class App extends React.Component {
         </h1>
 
         <DropZone
-          id='dropZone'
           handleFile={this.handleDrop}
         />
 

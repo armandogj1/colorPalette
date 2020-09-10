@@ -15,7 +15,7 @@ function DropZone({handleFile}) {
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
 
   return (
-    <div {...getRootProps()} style={{width: '25vw', height: '200px', border: 'solid black 2px', display: 'flex'}}>
+    <div id='dropZone' {...getRootProps()} >
       <input {...getInputProps()} />
       {
         isDragActive ?
